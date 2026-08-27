@@ -1,0 +1,170 @@
+/* ============================================================
+   Sky-High Properties — Animations
+   animations.css
+   ============================================================ */
+
+/* ── Reveal animations (triggered by IntersectionObserver) ─ */
+
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-premium),
+              transform 0.8s var(--ease-premium);
+}
+
+[data-reveal="up"]     { transform: translateY(30px); }
+[data-reveal="down"]   { transform: translateY(-20px); }
+[data-reveal="left"]   { transform: translateX(-30px); }
+[data-reveal="right"]  { transform: translateX(30px); }
+[data-reveal="fade"]   { transform: none; }
+[data-reveal="scale"]  { transform: scale(0.94); }
+[data-reveal="clip"]   { transform: none; clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--ease-premium), opacity 1.2s var(--ease-premium); }
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+}
+[data-reveal="clip"].revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Stagger delay via data attribute */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+[data-delay="500"] { transition-delay: 500ms; }
+[data-delay="600"] { transition-delay: 600ms; }
+
+/* ── Page transition ────────────────────────────────────── */
+.page-transition {
+  animation: pageIn 0.5s var(--ease-out) both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Image reveal with clip-path ────────────────────────── */
+.image-reveal {
+  overflow: hidden;
+}
+
+.image-reveal img {
+  transform: scale(1.08);
+  transition: transform 1.2s var(--ease-premium);
+}
+
+.image-reveal.revealed img {
+  transform: scale(1);
+}
+
+/* ── Line underline draw ────────────────────────────────── */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-draw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-cyan);
+  transition: width 0.6s var(--ease-out);
+}
+
+.underline-draw.revealed::after {
+  width: 100%;
+}
+
+/* ── Shimmer loading skeleton ───────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-surface-alt) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ── Hover lift card ────────────────────────────────────── */
+.hover-lift {
+  transition: transform var(--dur-slow) var(--ease-out),
+              box-shadow var(--dur-slow) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Ticker / infinite scroll ───────────────────────────── */
+.ticker-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Number counter ─────────────────────────────────────── */
+.counter-number {
+  display: inline-block;
+}
+
+/* ── Cyan line accent ───────────────────────────────────── */
+.cyan-line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--color-cyan);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+}
+
+.cyan-line--center { margin-inline: auto; }
+
+/* ── Hero text stagger ──────────────────────────────────── */
+.hero__eyebrow { animation: heroFadeUp 0.7s 0.2s var(--ease-out) both; }
+.hero__title   { animation: heroFadeUp 0.7s 0.4s var(--ease-out) both; }
+.hero__subtitle{ animation: heroFadeUp 0.7s 0.6s var(--ease-out) both; }
+.hero__actions { animation: heroFadeUp 0.7s 0.8s var(--ease-out) both; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduce motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sky-High Properties</title>
+    <meta name="description" content="Get in touch with Sky-High Properties. Visit us in Newtown, Kolkata or call/WhatsApp our team for property enquiries.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        .contact-grid { 
+            display: grid; 
+            grid-template-columns: 3fr 2fr; 
+            gap: var(--space-10); 
+            align-items: start; 
+        }
+        .contact-info-card {
+            background-color: #fff;
+            padding: var(--space-5);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border, #e5e5e5);
+            margin-bottom: var(--space-4);
+        }
+        .contact-info-card h4 {
+            color: var(--color-cyan);
+            margin-bottom: var(--space-2);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .contact-info-card p, .contact-info-card a {
+            color: var(--color-black);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        .contact-info-card a:hover {
+            color: var(--color-orange);
+        }
+        .enquiry-form {
+            background-color: #fff;
+            padding: var(--space-8);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border, #e5e5e5);
+        }
+        .form-group {
+            margin-bottom: var(--space-5);
+        }
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-2);
+            font-weight: 500;
+        }
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: var(--space-3) var(--space-4);
+            border: 1px solid var(--color-border, #e5e5e5);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+        }
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        @media (max-width: 768px) { 
+            .contact-grid { 
+                grid-template-columns: 1fr; 
+            } 
+        }
+        .map-section {
+            width: 100%;
+            margin-top: var(--space-12);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="images/Sky-High-Properties-logo-transparent.png" alt="Sky-High Properties" class="preloader-logo">
+    </div>
+
+    <!-- Navigation -->
+      <nav class="nav nav--scrolled" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <!-- Logo -->
+        <a href="index.html" class="nav__logo" aria-label="Sky-High Properties Home">
+          <img src="images/Sky-High-Properties-logo-transparent.png" alt="Sky-High Properties" class="logo-light">
+          <img src="images/Sky-High-Properties-logo.png" alt="Sky-High Properties" class="logo-dark">
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav__menu" role="list">
+          <li><a href="index.html" class="nav__link ">Home</a></li>
+          <li><a href="properties.html" class="nav__link ">Properties</a></li>
+          <li><a href="resale.html" class="nav__link ">Resale</a></li>
+          <li><a href="about.html" class="nav__link ">About</a></li>
+          <li><a href="contact.html" class="nav__link active">Contact</a></li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="nav__actions">
+          <a href="https://wa.me/916291585255?text=Hi%20Sky-High%20Properties!%20I'm%20interested%20in%20your%20properties."
+             target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+            WhatsApp Us
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+      <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" class="nav__mobile-link">Home</a>
+    <a href="properties.html" class="nav__mobile-link">Properties</a>
+    <a href="resale.html" class="nav__mobile-link">Resale</a>
+    <a href="about.html" class="nav__mobile-link">About</a>
+    <a href="contact.html" class="nav__mobile-link">Contact</a>
+    <div class="nav__mobile-contact">
+      <a href="https://wa.me/916291585255">WhatsApp Us</a>
+      <a href="tel:+916291585255">+91 62915 85255</a>
+    </div>
+  </div>
+
+
+    <!-- Page Banner -->
+    <header class="page-banner bg-dark">
+        <div class="container text-center" data-reveal="up">
+            <span class="section-label text-cyan">Get In Touch</span>
+            <h1 class="text-white mb-4">Contact Sky-High Properties</h1>
+            <p class="text-white mx-auto" style="max-width: 600px;">We're here to help you find your perfect property. Reach out via call, WhatsApp, or email — and we'll get back to you promptly.</p>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Left: Contact Form -->
+                <div data-reveal="up">
+                    <h3 class="mb-6">Send Us An Enquiry</h3>
+                    <!-- Note to client: Sign up at formspree.io and replace REPLACE_WITH_FORMSPREE_ID with your form ID -->
+                    <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST" class="enquiry-form">
+                        <input type="hidden" name="_subject" value="New Property Enquiry from Website">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest" class="form-label">Property Interest</label>
+                            <select id="interest" name="interest" class="form-select" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Looking to Buy">Looking to Buy</option>
+                                <option value="Looking to Rent">Looking to Rent</option>
+                                <option value="Investment Advice">Investment Advice</option>
+                                <option value="Sell My Property">Sell My Property</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary" style="width: 100%;">Send Enquiry &rarr;</button>
+                    </form>
+                </div>
+
+                <!-- Right: Contact Info Cards -->
+                <div data-reveal="up" data-delay="100">
+                    <div class="contact-info-card">
+                        <h4>📍 Office Address</h4>
+                        <p>Shop No. 40, 1st Floor,<br>NKDA Community Market, AB-Block,<br>Newtown Action Area-1, Kolkata – 700156</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h4>📞 Phone</h4>
+                        <p>
+                            <a href="tel:+916291585255">+91 62915 85255</a><br>
+                            <a href="tel:+917890360636">+91 78903 60636</a>
+                        </p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h4>✉️ Email</h4>
+                        <p><a href="mailto:we@skyhighinteriorandproperties.com">we@skyhighinteriorandproperties.com</a></p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h4>🕒 Hours</h4>
+                        <p>Mon–Sat: 10:00 AM – 7:00 PM<br>Sunday: By Appointment</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <h4>💬 WhatsApp</h4>
+                        <a href="https://wa.me/916291585255" target="_blank" class="btn btn--primary" style="background-color: #25D366; color: white; display: inline-block; margin-top: var(--space-2); width: 100%; text-align: center;">Chat on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Section -->
+    <section class="map-section">
+        <div class="container mb-6" data-reveal="up">
+            <h2 class="text-center">Find Us Here</h2>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.5!2d88.461!3d22.599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89fd2b1a78a3d%3A0xabd50b2a1e6d1e3c!2sNKDA%20Community%20Market%2C%20New%20Town%2C%20Kolkata%2C%20West%20Bengal%20700156!5e0!3m2!1sen!2sin!4v1000000000000!5m2!1sen!2sin" width="100%" height="420" style="border:0;display:block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <img src="images/Sky-High-Properties-logo-transparent.png" alt="Sky-High Properties" class="footer__logo mb-4" style="max-width: 150px;">
+                    <p class="text-gray mb-4">Your trusted partner in finding the perfect property in Newtown and Rajarhat, Kolkata.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61572897788779" target="_blank" aria-label="Facebook">FB</a>
+                        <a href="https://www.instagram.com/skyhigh_newtown" target="_blank" aria-label="Instagram">IG</a>
+                        <a href="https://wa.me/916291585255" target="_blank" aria-label="WhatsApp">WA</a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="text-white mb-4">Properties</h4>
+                    <ul class="footer__links">
+                        <li><a href="properties.html?type=buy">Buy Property</a></li>
+                        <li><a href="properties.html?type=rent">Rent Property</a></li>
+                        <li><a href="properties.html?type=commercial">Commercial Spaces</a></li>
+                        <li><a href="properties.html?type=residential">Residential Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+                    <ul class="footer__contact text-gray">
+                        <li class="mb-2">📍 Shop No. 40, 1st Floor, NKDA Community Market, AB-Block, Newtown Action Area-1, Kolkata – 700156</li>
+                        <li class="mb-2">📞 +91 62915 85255 / +91 78903 60636</li>
+                        <li>✉️ we@skyhighinteriorandproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom mt-8 pt-4 border-top">
+                <p class="text-center text-gray">&copy; 2026 Sky-High Properties. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/916291585255" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor">
+            <path d="M16 2a13 13 0 0 0-11 20l-2 5 5-2a13 13 0 1 0 8-23zm0 2a11 11 0 1 1-9 18l-3 1 1-3a11 11 0 0 1 11-16zm6 15c-.3 0-2-1-2-1s-.2-.3-.4-.3-.4.3-.5.5l-.6.8c-.1.2-.3.2-.5.1-1.3-.7-2.6-1.5-3.6-2.8-.2-.2-.1-.3 0-.4l.4-.5c.1-.1.2-.3.1-.4s-.8-2-1-2.2c-.2-.2-.5-.2-.7-.2h-.4c-.2 0-.6.1-.8.4-.5.5-.7 1.2-.7 1.9 0 .8.2 1.6.6 2.3 1.3 2.5 3.3 4.4 5.8 5.5.7.3 1.4.5 2.2.6.9.1 1.7-.1 2.4-.6.5-.4.8-1 .9-1.6 0-.2 0-.4-.1-.5z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        &uarr;
+    </button>
+
+    <!-- Scripts -->
+    <script src="data/properties.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/properties.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,475 @@
+/* ============================================================
+   Sky-High Properties — Filter Sidebar Styles
+   css/filter.css
+   ============================================================ */
+
+/* ── Filter Layout ─────────────────────────────────────────── */
+.listings-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ── Filter Sidebar ────────────────────────────────────────── */
+.filter-sidebar {
+  position: sticky;
+  top: calc(68px + var(--space-6));
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+}
+
+.filter-sidebar__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filter-sidebar__title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-cyan);
+}
+
+.filter-clear-btn {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border: none;
+  background: none;
+  transition: color var(--dur-base) var(--ease);
+  padding: 0;
+}
+.filter-clear-btn:hover { color: var(--color-cyan); }
+
+/* ── Filter Body ────────────────────────────────────────────── */
+.filter-sidebar__body {
+  padding: var(--space-4) 0;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+.filter-sidebar__body::-webkit-scrollbar { width: 4px; }
+.filter-sidebar__body::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-full); }
+
+/* ── Filter Section ────────────────────────────────────────── */
+.filter-section {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-section:last-child { border-bottom: none; }
+
+.filter-section__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+/* ── Keyword Search ─────────────────────────────────────────── */
+.filter-search {
+  position: relative;
+}
+
+.filter-search__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.filter-search__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  background: var(--color-surface-alt);
+  transition: border-color var(--dur-base) var(--ease);
+}
+
+.filter-search__input:focus {
+  outline: none;
+  border-color: var(--color-cyan);
+  background: var(--color-white);
+}
+
+.filter-search__input::placeholder { color: var(--color-text-muted); }
+
+/* ── Pill Buttons (for type, listing, beds) ─────────────────── */
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-pill {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+  white-space: nowrap;
+}
+
+.filter-pill:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+}
+
+.filter-pill.active {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+  color: var(--color-black);
+  font-weight: var(--weight-semibold);
+}
+
+/* ── Select Dropdown ─────────────────────────────────────────── */
+.filter-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 2.25rem 0.6rem 0.875rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: border-color var(--dur-base) var(--ease);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-cyan);
+  background-color: var(--color-white);
+}
+
+/* ── Budget Slider ───────────────────────────────────────────── */
+.budget-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.budget-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-cyan);
+}
+
+.budget-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.filter-range {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-cyan);
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.filter-range::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.filter-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--color-cyan);
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* ── Apply Button ───────────────────────────────────────────── */
+.filter-apply-btn {
+  width: calc(100% - var(--space-12));
+  margin: var(--space-4) var(--space-6) var(--space-5);
+  padding: 0.75rem;
+  background: var(--color-cyan);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.filter-apply-btn:hover {
+  background: var(--color-cyan-dark);
+  transform: translateY(-1px);
+}
+
+/* ── Results Header ──────────────────────────────────────────── */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.results-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.results-count strong {
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.results-sort {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.results-sort__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ── Properties Grid ─────────────────────────────────────────── */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.property-card-wrap {
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.property-card-wrap.hidden {
+  display: none;
+}
+
+/* ── No Results ──────────────────────────────────────────────── */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-20);
+  display: none;
+}
+
+.no-results.visible { display: block; }
+
+.no-results__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+  color: var(--color-text-muted);
+}
+
+.no-results__icon svg { width: 28px; height: 28px; }
+
+.no-results__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.no-results__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Mobile Filter Toggle ────────────────────────────────────── */
+.filter-mobile-toggle {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease);
+}
+
+.filter-mobile-toggle svg { width: 16px; height: 16px; }
+.filter-mobile-toggle:hover { border-color: var(--color-cyan); color: var(--color-cyan); }
+
+/* ── Active Filter Tags ──────────────────────────────────────── */
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  padding: 0.3rem 0.75rem;
+  background: var(--color-cyan-light);
+  color: var(--color-cyan-dark);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(45,204,211,0.25);
+}
+
+.active-filter-tag__remove {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(45,204,211,0.2);
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 2px;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.active-filter-tag__remove:hover { background: var(--color-cyan); color: var(--color-black); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .listings-layout { grid-template-columns: 240px 1fr; gap: var(--space-6); }
+}
+
+@media (max-width: 768px) {
+  .listings-layout { grid-template-columns: 1fr; }
+  .filter-mobile-toggle { display: flex; }
+
+  .filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 85vw;
+    z-index: var(--z-overlay);
+    border-radius: 0;
+    transform: translateX(-110%);
+    transition: transform 0.35s var(--ease-out);
+    box-shadow: var(--shadow-xl);
+    overflow-y: auto;
+  }
+
+  .filter-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .filter-sidebar__body {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .filter-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: calc(var(--z-overlay) - 1);
+    backdrop-filter: blur(2px);
+  }
+
+  .filter-overlay.visible { display: block; }
+  .filter-apply-btn { width: calc(100% - var(--space-12)); }
+}
+
+/* ── Resale-specific badge ───────────────────────────────────── */
+.badge--age {
+  background: #F3F4F6;
+  color: #374151;
+  font-size: var(--text-xs);
+}
+
+/* ── Property card resale extra ─────────────────────────────── */
+.property-card__age {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+.property-card__age svg { width: 12px; height: 12px; }

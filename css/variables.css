@@ -1,0 +1,112 @@
+/* ============================================================
+   Sky-High Properties — Design Tokens
+   variables.css
+   ============================================================ */
+
+:root {
+  /* ── Brand Colors ─────────────────────────────────────── */
+  --color-black:        #0D0D0D;
+  --color-dark:         #1A1A1A;
+  --color-bg:           #F6F7F5;
+  --color-white:        #FFFFFF;
+  --color-cyan:         #2DCCD3;
+  --color-cyan-dark:    #1EAFB5;
+  --color-cyan-light:   #E8F9FA;
+  --color-orange:       #FF8C2A;
+  --color-orange-light: #FFF4EB;
+
+  /* ── Text ─────────────────────────────────────────────── */
+  --color-text-primary:   #1A1A1A;
+  --color-text-secondary: #4B5563;
+  --color-text-muted:     #9CA3AF;
+  --color-text-inverse:   #FFFFFF;
+
+  /* ── Borders & Surfaces ───────────────────────────────── */
+  --color-border:      #E5E7EB;
+  --color-border-dark: #2A2A2A;
+  --color-surface:     #FFFFFF;
+  --color-surface-alt: #F9FAFB;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.125rem;  /* 18px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.5rem;    /* 24px */
+  --text-2xl:  1.875rem;  /* 30px */
+  --text-3xl:  2.25rem;   /* 36px */
+  --text-4xl:  3rem;      /* 48px */
+  --text-5xl:  3.75rem;   /* 60px */
+  --text-6xl:  4.5rem;    /* 72px */
+
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.35;
+  --leading-normal: 1.6;
+
+  --tracking-tight:  -0.03em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.08em;
+  --tracking-wider:  0.15em;
+
+  /* ── Spacing ──────────────────────────────────────────── */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+  --space-32: 8rem;      /* 128px */
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --container-max: 1280px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+  --nav-height: 80px;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg:  0 12px 32px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-xl:  0 24px 48px rgba(0,0,0,0.12), 0 8px 20px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 20px 40px rgba(0,0,0,0.12);
+
+  /* ── Transitions ──────────────────────────────────────── */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --ease:      cubic-bezier(0.8, 0, 0.1, 1); /* Slower, dramatic ease */
+  --dur-fast:  200ms;
+  --dur-base:  400ms;
+  --dur-slow:  700ms;
+
+  /* ── Z-Index ──────────────────────────────────────────── */
+  --z-base:    1;
+  --z-card:    10;
+  --z-search:  20;
+  --z-sticky:  100;
+  --z-nav:     200;
+  --z-overlay: 300;
+  --z-modal:   400;
+  --z-float:   500;
+}

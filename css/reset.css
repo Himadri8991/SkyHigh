@@ -1,0 +1,116 @@
+/* ============================================================
+   Sky-High Properties — CSS Reset & Base Styles
+   reset.css
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-cyan); border-radius: var(--radius-full); }
+
+/* Selection */
+::selection {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Preloader - Premium Wipe-Up */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-black); /* Dark curtain */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  transform-origin: top;
+  transition: transform 1s cubic-bezier(0.8, 0, 0.1, 1), visibility 1s;
+}
+
+#preloader.hidden {
+  transform: translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-logo {
+  width: 200px;
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 0% 100%;
+  animation: logoDrawReveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes logoDrawReveal {
+  0% { opacity: 1; -webkit-mask-size: 0% 100%; transform: scale(0.96) translateY(5px); }
+  50% { opacity: 1; -webkit-mask-size: 100% 100%; transform: scale(1) translateY(0); }
+  85% { opacity: 1; -webkit-mask-size: 100% 100%; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: translateY(-15px); -webkit-mask-size: 100% 100%; }
+}

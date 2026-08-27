@@ -1,0 +1,34 @@
+  <nav class="nav {NAV_CLASS}" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <!-- Logo -->
+        <a href="index.html" class="nav__logo" aria-label="Sky-High Properties Home">
+          <img src="images/Sky-High-Properties-logo-transparent.png" alt="Sky-High Properties" class="logo-transparent" style="max-height: 48px; width: auto;">
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav__menu" role="list">
+          <li><a href="index.html" class="nav__link {HOME_ACTIVE}">Home</a></li>
+          <li><a href="properties.html" class="nav__link {PROP_ACTIVE}">Properties</a></li>
+          <li><a href="resale.html" class="nav__link {RESALE_ACTIVE}">Resale</a></li>
+          <li><a href="about.html" class="nav__link {ABOUT_ACTIVE}">About</a></li>
+          <li><a href="contact.html" class="nav__link {CONTACT_ACTIVE}">Contact</a></li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="nav__actions">
+          <a href="https://wa.me/916291585255?text=Hi%20Sky-High%20Properties!%20I'm%20interested%20in%20your%20properties."
+             target="_blank" rel="noopener" class="btn btn--primary btn--sm">
+            WhatsApp Us
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
